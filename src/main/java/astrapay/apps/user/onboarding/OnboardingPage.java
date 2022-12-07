@@ -13,7 +13,13 @@ public class OnboardingPage extends BasePage {
 
     public OnboardingPage(AppiumDriver driver) {
         this.driver = driver;
-        PageFactory.initElements(new AppiumFieldDecorator(driver), this);
+        System.out.println("DEBUG: driver " + driver);
+        try {
+            PageFactory.initElements(new AppiumFieldDecorator(driver), this);
+        } catch (Exception e) {
+            System.out.println("DEBUG: exception " + e);
+        }
+
     }
 
     @AndroidFindBy(id = "com.ada.astrapayupdate:id/btnLogin")

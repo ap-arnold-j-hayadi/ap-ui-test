@@ -15,18 +15,19 @@ public class BaseTest {
     public JavascriptExecutor jse;
     public static AppiumDriverLocalService service;
 
-    @BeforeSuite
+    @BeforeSuite(alwaysRun = true)
     public void setupServer() {
         try {
             if (service != null) {
                 service.stop();
             }
-            System.out.println("Setting Up Server. . . .");
+            System.out.println("D. Setting Up Server. . . .");
             service = new AppiumServiceBuilder()
                     .withAppiumJS(new File("/usr/local/lib/node_modules/appium/build/lib/main.js"))
                     .withIPAddress("127.0.0.1")
                     .withArgument(GeneralServerFlag.BASEPATH, "/wd/hub/")
                     .usingPort(4723).build();
+            Thread.sleep(5000);
             service.start();
         } catch (Exception e) {
             if(driver != null) {
@@ -44,7 +45,7 @@ public class BaseTest {
     @BeforeClass(alwaysRun=true)
     public void setUp() {
         try {
-            System.out.println("Setting Up Test. . . .");
+            System.out.println("D. Setting Up Test. . . .");
             AndroidDriverSingleton singleton = AndroidDriverSingleton.getInstance();
             driver = singleton.getDriver();
         } catch (Exception e) {
@@ -62,7 +63,7 @@ public class BaseTest {
     @AfterSuite(alwaysRun=true)
     public void tearDown() {
         try {
-            System.out.println("Ending Appium session. . . .");
+            System.out.println("D. Ending Appium session. . . .");
             driver.quit();
             service.stop();
         } catch (Exception e) {
@@ -77,10 +78,10 @@ public class BaseTest {
 
     }
 
-    @AfterMethod
+    @AfterMethod(alwaysRun = true)
     public void closeApp() {
         try {
-            System.out.println("AfterMethod: Closing App. . . .");
+            System.out.println("D. AfterMethod: Closing App. . . .");
             driver.terminateApp("com.ada.astrapayupdate");
         } catch (Exception e) {
             if(driver != null) {
@@ -94,10 +95,10 @@ public class BaseTest {
 
     }
 
-    @BeforeMethod
+    @BeforeMethod(alwaysRun = true)
     public void openApp() throws InterruptedException {
         try {
-            System.out.println("BeforeMethod: Launching App. . . .");
+            System.out.println("D. BeforeMethod: Launching App. . . .");
             driver.launchApp();
 //        driver.activateApp("com.ada.astrapayupdate");
         } catch (Exception e) {

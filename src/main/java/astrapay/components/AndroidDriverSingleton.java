@@ -68,7 +68,7 @@ public class AndroidDriverSingleton {
             } else {
                 driver = new AndroidDriver(new URL("http://127.0.0.1:4723/wd/hub"), capabilities);
             }
-            driver.terminateApp("com.ada.astrapayupdate");
+//            driver.terminateApp("com.ada.astrapayupdate");
         } catch (Exception e) {
             System.out.println("EXCEPTION: " + e);
             if (driver != null) {

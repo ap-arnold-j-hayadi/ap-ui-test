@@ -4,7 +4,7 @@
     <parameter name="testParam" value="local-android"></parameter>
     <test name="Local Android Test">
         <classes>
-            <class name="first_test.FirstTest"/>
+            <class name="astrapay.apps.user.OnboardingTest"/>
 <!--            <class name="first_test.SecondTest"/>-->
         </classes>
     </test>

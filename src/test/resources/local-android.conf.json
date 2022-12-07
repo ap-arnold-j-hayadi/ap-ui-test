@@ -5,7 +5,7 @@
       "appPackage": "com.ada.astrapayupdate",
       "appActivity": "com.astrapay.MainActivity",
       "automationName": "uiautomator2",
-      "noReset": "false"
+      "autoLaunch": "false"
     },
   
     "environments": [{
