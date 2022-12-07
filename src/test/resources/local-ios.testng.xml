@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Local iOS Test Suite">
+    <parameter name="testParam" value="local-iOS"></parameter>
+    <test name="Local iOS Test">
+        <classes>
+            <class name="first_test.FirstTest"/>
+<!--            <class name="first_test.SecondTest"/>-->
+        </classes>
+    </test>
+</suite>

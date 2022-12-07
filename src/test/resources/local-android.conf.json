@@ -1,0 +1,15 @@
+{
+    "capabilities": {
+      "autoGrantPermissions": "true",
+      "platformName": "android",
+      "appPackage": "com.ada.astrapayupdate",
+      "appActivity": "com.astrapay.MainActivity",
+      "automationName": "uiautomator2",
+      "noReset": "false"
+    },
+  
+    "environments": [{
+      "appium:device": "Pixel 6 Pro API 31",
+      "appium:osVersion":  "12.0"
+    }]
+}

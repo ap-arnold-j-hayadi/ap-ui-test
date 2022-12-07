@@ -1,0 +1,15 @@
+{
+    "capabilities": {
+      "autoGrantPermissions": "true",
+      "platformName": "android",
+      "appPackage": "com.ada.astrapayupdate",
+      "appActivity": "com.astrapay.MainActivity",
+      "automationName": "XCUItest",
+      "noReset": "false"
+    },
+  
+    "environments": [{
+      "appium:device": "iPhone 14 Pro",
+      "appium:osVersion":  "16.0"
+    }]
+}
