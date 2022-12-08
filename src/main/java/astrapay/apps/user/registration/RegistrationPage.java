@@ -1,6 +1,7 @@
 package astrapay.apps.user.registration;
 
 import astrapay.components.BasePage;
+import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.pagefactory.AndroidFindBy;
 import io.appium.java_client.pagefactory.AppiumFieldDecorator;
@@ -9,9 +10,9 @@ import org.openqa.selenium.support.PageFactory;
 import org.testng.Assert;
 
 public class RegistrationPage extends BasePage {
-    private AndroidDriver driver;
+    private AppiumDriver driver;
 
-    public RegistrationPage(AndroidDriver driver) {
+    public RegistrationPage(AppiumDriver driver) {
         this.driver = driver;
         PageFactory.initElements(new AppiumFieldDecorator(driver), this);
     }

@@ -19,8 +19,8 @@ import java.time.Duration;
 
 public class PhoneInputTest extends BaseTest {
 
-    @Test
-    public void inputCorrectButUnregisteredPhoneNumberAndContinue() throws Exception {
+    @Test(groups = {"secondary"})
+    public void inputCorrectButUnregisteredPhoneNumberAndContinue() {
         System.out.println("starting second test 1. . . .");
         OnboardingPage onboardingPage = new OnboardingPage(driver);
         PhoneInputPage phoneInputPage = new PhoneInputPage(driver);
@@ -30,8 +30,8 @@ public class PhoneInputTest extends BaseTest {
         phoneInputPage.isNumberNotRegistered();
     }
 
-    @Test
-    public void inputCorrectButRegisteredPhoneNumberAndContinue() throws Exception {
+    @Test(groups = {"secondary"})
+    public void inputCorrectButRegisteredPhoneNumberAndContinue() {
         System.out.println("starting second test 2. . . .");
         OnboardingPage onboardingPage = new OnboardingPage(driver);
         PhoneInputPage phoneInputPage = new PhoneInputPage(driver);

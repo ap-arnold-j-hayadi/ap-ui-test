@@ -1,6 +1,7 @@
 package astrapay.apps.user.phoneinput;
 
 import astrapay.components.BasePage;
+import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.pagefactory.AndroidFindBy;
 import io.appium.java_client.pagefactory.AppiumFieldDecorator;
@@ -9,9 +10,9 @@ import org.openqa.selenium.support.PageFactory;
 import org.testng.Assert;
 
 public class PhoneInputPage extends BasePage {
-    private AndroidDriver driver;
+    private AppiumDriver driver;
 
-    public PhoneInputPage(AndroidDriver driver) {
+    public PhoneInputPage(AppiumDriver driver) {
         this.driver = driver;
         PageFactory.initElements(new AppiumFieldDecorator(driver), this);
     }
@@ -31,23 +32,28 @@ public class PhoneInputPage extends BasePage {
 
 
     public void inputUnregisteredCorrectPhoneNumber() {
+        waitForElementToAppear(driver, inputPhoneTextInput);
         inputPhoneTextInput.sendKeys("8888888888");
     }
 
     public void inputRegisteredCorrectPhoneNumber() {
+        waitForElementToAppear(driver, inputPhoneTextInput);
         inputPhoneTextInput.sendKeys("8196000196");
     }
 
     public void clickButtonContinue() {
+        waitForElementToBeClickable(driver, continueButton);
         continueButton.click();
     }
 
     public void isNumberNotRegistered() {
+        waitForElementToAppear(driver, labelText);
         Assert.assertTrue(labelText.isDisplayed());
     }
 
     @Override
     public void isCurrentPage() {
+        waitForElementToAppear(driver, titleText);
         Assert.assertTrue(
                 titleText.getText().equals("Silakan masukan nomor handphone yang terdaftar")
         );

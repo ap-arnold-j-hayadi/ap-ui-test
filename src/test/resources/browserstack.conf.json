@@ -9,7 +9,8 @@
     "name": "first_test_testNg",
     "browserstack.debug": true,
     "autoGrantPermissions": "true",
-    "app": "bs://7ebddd9cc54f19105224fe87bf28cc0e94c02981"
+    "app": "bs://7ebddd9cc54f19105224fe87bf28cc0e94c02981",
+    "noReset": "false"
   },
 
   "environments": [
